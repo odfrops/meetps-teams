@@ -18,10 +18,10 @@
     $scope.GoToPolls = function (e, meetingId) {
         e.preventDefault()
 
-        var url = GetRedirectURL("Polls.html?meetingId=" + meetingId)
         microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
             // Let the Microsoft Teams platform know what you want to load based on
             // what the user configured on this page
+            var url = GetRedirectURL("Polls.html?meetingId=" + meetingId)
             microsoftTeams.settings.setSettings({
                 contentUrl: url,
                 suggestedDisplayName: meetingId,
