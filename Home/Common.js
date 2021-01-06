@@ -71,6 +71,10 @@ function ForgotPassword () {
     window.open(BaseURL + "login/forgot", "_blank")
 }
 
+function GetAttendeeURL (meetingid) {
+    return BaseURL + meetingid
+}
+
 function getQueryStringValue(key) {
     return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"))
 }

@@ -40,6 +40,7 @@
   "validDomains": [
     "odfrops.github.io",
     "dev.meet.ps",
-    "app.meet.ps"
+    "app.meet.ps",
+    "local.meet.ps"
   ]
 }
