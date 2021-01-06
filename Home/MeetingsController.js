@@ -20,7 +20,6 @@
         }
     })
 
-    // Handle theme changes
     microsoftTeams.registerOnThemeChangeHandler(function (theme) {
         setTheme(theme)
     })
@@ -33,7 +32,7 @@
         var url = GetAttendeeURL(meetId)
         microsoftTeams.settings.setSettings({
             contentUrl: url,
-            suggestedDisplayName: meetingId,
+            suggestedDisplayName: 'MeetingPulse - ' + meetId,
         })
         saveEvent.notifySuccess();
     });
