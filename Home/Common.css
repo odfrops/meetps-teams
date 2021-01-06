@@ -50,8 +50,9 @@ body {
 }
 
 .pointcur {
-    cursor:pointer;
+    cursor: pointer;
 }
-    .pointcur:hover {
-        cursor: pointer;
-    }
+
+.pointcur:hover {
+    cursor: pointer;
+}

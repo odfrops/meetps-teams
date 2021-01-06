@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json",
+  "manifestVersion": "devPreview",
+  "version": "1.0.0",
+  "id": "9720c6de-a181-4f1d-969b-7640cc969eda",
+  "packageName": "com.microsoft.teams.extension",
+  "developer": {
+    "name": "Teams App, Inc.",
+    "websiteUrl": "https://odfrops.github.io/meetps-teams",
+    "privacyUrl": "https://odfrops.github.io/meetps-teams/Home/Privacy.html",
+    "termsOfUseUrl": "https://odfrops.github.io/meetps-teams/Home/TermsOfUse.html"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "MeetingPulse - Demo",
+    "full": ""
+  },
+  "description": {
+    "short": "Short description for MeetingPulse - Demo.",
+    "full": "Full description of MeetingPulse - Demo."
+  },
+  "accentColor": "#FFFFFF",
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://odfrops.github.io/meetps-teams/Home/TabConfigure.html",
+      "canUpdateConfiguration": true,
+      "scopes": ["groupchat"],
+      "context": [
+        "meetingChatTab",
+        "meetingDetailsTab",
+        "meetingSidePanel",
+        "privateChatTab"
+      ]
+    }
+  ],
+  "permissions": ["identity", "messageTeamMembers"],
+  "validDomains": [
+    "odfrops.github.io",
+    "dev.meet.ps",
+    "app.meet.ps"
+  ]
+}

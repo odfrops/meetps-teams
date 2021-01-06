@@ -6,9 +6,6 @@ var configs = {
     },
     "default": {
         "domain": "app.meet.ps"
-    },
-    "local": {
-        "domain": "local.meet.ps:8443"
     }
 }
 
@@ -50,6 +47,11 @@ function getCurrentUser() {
 
 // Relative URL redirector with support for customized views depending on config/endpoint.
 function Redirect(q) {
+    window.location.href = GetRedirectURL(q)
+}
+
+function GetRedirectURL(q) {
+    console.log(q)
     // Honour base relative path.
     var currentPath = window.location.pathname.indexOf(basePath)
     var basePrefix = window.location.pathname.substring(0, currentPath)
@@ -58,8 +60,7 @@ function Redirect(q) {
     var isCustom = config.customViews && config.customViews[view] && config.customPath
     var prefix = basePrefix + (isCustom ? (config.customPath + "/") : "/Home/")
     // Carry over the endpoint/mode thing. Note that other strings might already be present there.
-
-    window.location.href = prefix
+    return prefix + q
 }
 
 // TODO: ng-click this

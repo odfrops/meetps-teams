@@ -18,13 +18,15 @@ iframe {
     left: 0;
     top: 0;
     bottom:0;
-    width:40px
+    /* width:40px */
+    width: 0px;
 }
 
 #rightDiv {
     position: absolute;
     background: #000;
-    left: 40px;
+    /* left: 40px; */
+    left: 0px;
     top: 0;
     bottom: 0;
     right: 0;
