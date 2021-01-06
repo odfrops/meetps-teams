@@ -32,10 +32,9 @@
         var url = GetAttendeeURL(meetId)
         microsoftTeams.settings.setSettings({
             contentUrl: url,
+            entityId: url,
             suggestedDisplayName: meetId,
         })
-        console.log(url)
-        console.log(meetId)
         saveEvent.notifySuccess()
     });
 
