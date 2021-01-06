@@ -6,18 +6,33 @@
         GetMeetings()
     })
 
+    microsoftTeams.initialize();
+    // microsoftTeams.getContext(function (context) {
+    //     if (context && context.theme) {
+    //         setTheme(context.theme);
+    //     }
+    // });
+
     $scope.Meetings = []
 
     $scope.GoToPolls = function (e, meetingId) {
         e.preventDefault()
 
-        let url = GetRedirectURL("Polls.html?meetingId=" + meetingId)
-        microsoftTeams.settings.setSettings({
-            contentUrl: url,
-            suggestedDisplayName: meetingId,
-        })
-
-        microsoftTeams.settings.setValidityState(true)
+        var url = GetRedirectURL("Polls.html?meetingId=" + meetingId)
+        microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
+            // Let the Microsoft Teams platform know what you want to load based on
+            // what the user configured on this page
+            microsoftTeams.settings.setSettings({
+                contentUrl: url,
+                suggestedDisplayName: meetingId,
+            })
+            microsoftTeams.settings.setValidityState(true)
+        
+            // Tells Microsoft Teams platform that we are done saving our settings. Microsoft Teams waits
+            // for the app to call this API before it dismisses the dialog. If the wait times out, you will
+            // see an error indicating that the configuration settings could not be saved.
+            saveEvent.notifySuccess();
+        });
     }
 
     function GetMeetings() {
