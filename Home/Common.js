@@ -6,10 +6,13 @@ var configs = {
     },
     "default": {
         "domain": "app.meet.ps"
+    },
+    "local": {
+        "domain": "local.meet.ps:8443"
     }
 }
 
-var mode = 'development'
+var mode = 'local'
 var config = configs[mode] || configs.default
 
 var BaseURL = "https://" + config.domain + "/"
