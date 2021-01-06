@@ -32,9 +32,11 @@
         var url = GetAttendeeURL(meetId)
         microsoftTeams.settings.setSettings({
             contentUrl: url,
-            suggestedDisplayName: 'MeetingPulse - ' + meetId,
+            suggestedDisplayName: meetId,
         })
-        saveEvent.notifySuccess();
+        console.log(url)
+        console.log(meetId)
+        saveEvent.notifySuccess()
     });
 
     $scope.Meetings = []
