@@ -1,7 +1,7 @@
 {
-  "$schema": "https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json",
-  "manifestVersion": "devPreview",
-  "version": "1.0.0",
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.8/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.8",
+  "version": "1.0.2",
   "id": "9720c6de-a181-4f1d-969b-7640cc969eda",
   "packageName": "com.microsoft.teams.extension",
   "developer": {
@@ -41,6 +41,6 @@
     "odfrops.github.io",
     "dev.meet.ps",
     "app.meet.ps",
-    "local.meet.ps"
+    "local.meet.ps:8443"
   ]
 }
