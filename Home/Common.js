@@ -12,7 +12,7 @@ var configs = {
     }
 }
 
-var mode = 'development'
+var mode = 'default'
 var config = configs[mode] || configs.default
 
 var BaseURL = "https://" + config.domain + "/"
