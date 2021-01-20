@@ -6,9 +6,9 @@
   "packageName": "com.microsoft.teams.extension",
   "developer": {
     "name": "Teams App, Inc.",
-    "websiteUrl": "https://odfrops.github.io/meetps-teams",
-    "privacyUrl": "https://odfrops.github.io/meetps-teams/Home/Privacy.html",
-    "termsOfUseUrl": "https://odfrops.github.io/meetps-teams/Home/TermsOfUse.html"
+    "websiteUrl": "https://meet.ps",
+    "privacyUrl": "https://inmomentsoftware.github.io/mp_msteams/Home/Privacy.html",
+    "termsOfUseUrl": "https://inmomentsoftware.github.io/mp_msteams/Home/TermsOfUse.html"
   },
   "icons": {
     "color": "color.png",
@@ -25,7 +25,7 @@
   "accentColor": "#FFFFFF",
   "configurableTabs": [
     {
-      "configurationUrl": "https://odfrops.github.io/meetps-teams/Home/TabConfigure.html",
+      "configurationUrl": "https://inmomentsoftware.github.io/mp_msteams/Home/TabConfigure.html",
       "canUpdateConfiguration": true,
       "scopes": ["groupchat"],
       "context": [
@@ -39,6 +39,7 @@
   "permissions": ["identity", "messageTeamMembers"],
   "validDomains": [
     "odfrops.github.io",
+    "inmomentsoftware.github.io",
     "dev.meet.ps",
     "app.meet.ps",
     "local.meet.ps:8443"
