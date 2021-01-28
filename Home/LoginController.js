@@ -5,6 +5,9 @@
 
     angular.element(document).ready(function () {
         $(".pointcur").css('cursor', 'pointer')
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+        $scope.Email = 'width: ' + vw + ', height: ' + vh
     })
 
     $scope.Login = function () {
