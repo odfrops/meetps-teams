@@ -9,6 +9,10 @@
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
     })
 
+    $scope.OpenForgot = function() {
+        window.open('https://app.meet.ps/dashboard/login/forgot')
+    }
+
     $scope.OpenHow = function() {
         window.open('https://meet.ps/')
     }
