@@ -9,41 +9,69 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
 
     <script src="Common.js" type="text/javascript"></script>
     <script src="LoginController.js" type="text/javascript"></script>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css" rel="stylesheet" type="text/css" />
     <link href="Common.css" rel="stylesheet" type="text/css" />
     <link href="Login.css" rel="stylesheet" type="text/css" />
 
 
 </head>
-<body data-ng-app="myApp" data-ng-controller="myCtrl">
+<body ng-app="myApp" ng-controller="myCtrl">
 
     <div class="container mainCon">
-        <h1 class="text-center" style="font-weight:bold;font-size:42px;color:#000000">Log in</h1>
+        <div class="content">
+        <svg class="logo" width="88" height="56" viewBox="0 0 88 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 36.5106V56L17.7568 36.5106H13.1031L3.46041 47.0941V36.5106H0Z" fill="#6A48E7"/>
+            <path d="M0.00404492 12.564H3.39152V5.52533L6.56504 10.3116H6.63636L9.82771 5.49014V12.564H13.2687V0.246352H9.61376L6.63636 5.01503L3.65895 0.246352H0.00404492V12.564Z" fill="#6A48E7"/>
+            <path d="M16.4143 12.564H26.5411V9.66054H19.8374V7.70731H25.8279V5.01503H19.8374V3.14979H26.4519V0.246352H16.4143V12.564Z" fill="#6A48E7"/>
+            <path d="M29.2379 12.564H39.3647V9.66054H32.6611V7.70731H38.6515V5.01503H32.6611V3.14979H39.2756V0.246352H29.2379V12.564Z" fill="#6A48E7"/>
+            <path d="M45.1103 12.564H48.5691V3.23778H52.3131V0.246352H41.3662V3.23778H45.1103V12.564Z" fill="#6A48E7"/>
+            <path d="M54.8346 12.564H58.3112V0.246352H54.8346V12.564Z" fill="#6A48E7"/>
+            <path d="M61.5279 12.564H64.9511V5.80688L70.2819 12.564H73.3128V0.246352H69.8896V6.7571L64.755 0.246352H61.5279V12.564Z" fill="#6A48E7"/>
+            <path d="M82.58 12.8103C84.8443 12.8103 86.6807 11.9833 88 10.9099V5.36697H82.2591V7.86568H84.7195V9.36139C84.2025 9.69573 83.5606 9.8717 82.7227 9.8717C80.7437 9.8717 79.3352 8.44637 79.3352 6.45796V6.42276C79.3352 4.53992 80.7259 3.04421 82.5266 3.04421C83.7567 3.04421 84.6482 3.46653 85.5396 4.20559L87.5721 1.79485C86.2528 0.668671 84.7017 0 82.5087 0C78.6399 0 75.7873 2.81546 75.7873 6.40516V6.44036C75.7873 10.1708 78.6934 12.8103 82.58 12.8103Z" fill="#6A48E7"/>
+            <path d="M0.00404492 30.1606H3.46283V26.6413H5.1744C8.2766 26.6413 10.5409 25.1104 10.5409 22.2069V22.1717C10.5409 19.4443 8.50838 17.843 5.35268 17.843H0.00404492V30.1606ZM3.46283 23.9666V20.7112H5.08525C6.33327 20.7112 7.08208 21.2743 7.08208 22.3301V22.3653C7.08208 23.3331 6.33327 23.9666 5.10308 23.9666H3.46283Z" fill="#6A48E7"/>
+            <path d="M18.5482 30.3893C22.0961 30.3893 24.396 28.6473 24.396 24.6704V17.843H20.8838V24.776C20.8838 26.5005 19.9745 27.3099 18.5839 27.3099C17.1932 27.3099 16.2839 26.4653 16.2839 24.688V17.843H12.7717V24.7584C12.7717 28.6121 15.0003 30.3893 18.5482 30.3893Z" fill="#6A48E7"/>
+            <path d="M27.375 30.1606H36.8777V27.1692H30.8338V17.843H27.375V30.1606Z" fill="#6A48E7"/>
+            <path d="M49.42 18.9251C47.5301 17.8957 46.0682 17.623 44.3834 17.623C41.4683 17.623 39.4002 19.1363 39.3556 21.5294C39.3111 23.7466 40.7017 24.8904 43.2691 25.2863L43.8931 25.3831C45.5244 25.6295 46.3624 25.8406 46.3624 26.5797C46.3624 27.3451 45.5066 27.7235 44.3834 27.7235C42.6272 27.7235 41.3079 27.0724 40.354 26.4301L38.8653 28.8232C40.2471 29.8526 42.2796 30.3893 44.3566 30.3893C47.0309 30.3893 49.5894 29.1664 49.5894 26.2365C49.5894 24.2217 48.065 23.1043 45.6403 22.6908L45.1232 22.6028C43.7415 22.3653 42.5559 22.1805 42.5559 21.4063C42.5559 20.676 43.3849 20.2977 44.5171 20.2977C45.979 20.2977 47.2003 20.808 48.0917 21.3359L49.42 18.9251Z" fill="#6A48E7"/>
+            <path d="M52.3084 30.1606H62.4351V27.2571H55.7315V25.3039H61.722V22.6116H55.7315V20.7464H62.346V17.843H52.3084V30.1606Z" fill="#6A48E7"/>
+        </svg>
+            
+        <div class="title">Activate your event audiences, anywhere.</div>
+        <div class="text" ng-click="OpenHow()">Discover how
+            <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.47727 0C1.56125 0 0 1.43115 0 3.1875V8.8125C0 10.5688 1.56125 12 3.47727 12H14.5227C16.4387 12 18 10.5688 18 8.8125V3.1875C18 1.43115 16.4387 0 14.5227 0H3.47727ZM3.47724 1.12498H14.5227C15.7795 1.12498 16.7727 2.03539 16.7727 3.18748V8.81248C16.7727 9.96458 15.7795 10.875 14.5227 10.875H3.47724C2.22041 10.875 1.22724 9.96458 1.22724 8.81248V3.18748C1.22724 2.03539 2.22041 1.12498 3.47724 1.12498Z" fill="#21D0FF"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.6089 6.88653L7.46397 2.52692L7.45068 8.30013L8.87737 7.3867L9.79235 9.64797L10.7923 9.30781L9.87732 7.04654L11.6089 6.88653Z" fill="#21D0FF"/>
+            </svg>
+        </div>
         <div class="inner">
             <form ng-submit="Login()">
-                <div class="form-group">
-                    <label for="email" style="font-size:16px">Your Email</label>
-                    <input ng-model="Email" class="form-control input-lg" id="email" type="email" required/>
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm="" style="margin-bottom: 0px; margin-top: 18px;">
+                        <label>Email</label>
+                        <input class="input" ng-model="Email" type="email" id="email"/>
+                    </md-input-container>
                 </div>
-                <p> </p>
-                <label for="password" style="font-size:16px">Password</label>
-
-                <div class="input-group">
-                    <input ng-model="Password" class="form-control input-lg" type="password" id="password" required/>
-                    <span class="input-group-addon"><a target="_blank" href="javascript:ForgotPassword();">FORGOT?</a></span>
+                <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm="" style="margin-bottom: 0px; margin-top: 18px;">
+                        <label>Password</label>
+                        <input class="input" ng-model="Password" type="password" id="password"/>
+                        <span class="input-group-addon"><a target="_blank" href="javascript:ForgotPassword();">FORGOT?</a></span>
+                    </md-input-container>
                 </div>
-                <br />
-                <div class="text-center" id="error"></div>
-                <br />
-
-
-                <button id="btnLogin"  style="font-size:26px;font-weight:bold;" class="pointcur btn btn-success btn-lg btn-block">Log in</button><br /><br />
+                <button id="btnLogin" class="button">Log in</button>
+                <div class="text" style="text-align: center;">Don't have an account? <b ng-click="OpenSignUp()" style="text-decoration: underline;">Sign up</b></div>
             </form>
         </div>
+    </div>
     </div>
 </body>
 </html>

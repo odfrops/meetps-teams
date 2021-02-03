@@ -83,7 +83,12 @@ function getQueryStringValue(key) {
 // "main"
 
 if (window.angular) {
-    var app = angular.module('myApp', ['ngSanitize'])
+    var app
+    if (window.location.href.endsWith('Login.html')) {
+        app = angular.module('myApp', ['ngSanitize', 'ngMaterial', 'ngMessages'])
+    } else {
+        app = angular.module('myApp', ['ngSanitize'])
+    }
 
     app.filter('encodeURIComponent', function () {
         return window.encodeURIComponent
