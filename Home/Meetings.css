@@ -70,10 +70,11 @@ div {
     font-weight: 500;
     font-size: 22px;
     line-height: 23px;
+    cursor: pointer;
 }
 .content div:last-child {
     border-bottom: none;
 }
 .content .selected {
-    background-color: #f2f2f2;
+    background-color: #e5e5e5;
 }
