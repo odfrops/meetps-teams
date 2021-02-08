@@ -45,6 +45,11 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: "SF UI Display";
+    src: url("Fonts/sf-ui-display-light.woff");
+}
+
 body {
     font-family: "Proxima Nova" !important;
 }

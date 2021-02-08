@@ -2,15 +2,8 @@
 
     var meetId = ''
     angular.element(document).ready(function () {
-        $(".pointcur").css('cursor', 'pointer')
-
         GetMeetings()
     })
-
-    $("#btnLogout").click(function () {
-        SaveUser(null)
-        Redirect("Login.html")
-    });
 
     microsoftTeams.initialize();
 
@@ -39,13 +32,24 @@
     });
 
     $scope.Meetings = []
+    $scope.selected = ''
 
     $scope.GoToPolls = function (e, meetingId) {
         e.preventDefault()
 
         meetId = meetingId
+        $scope.selected = meetId
 
         microsoftTeams.settings.setValidityState(true)
+    }
+
+    $scope.GoToMeetings = function() {
+        window.open('https://app.meet.ps/dashboard/meetings')
+    }
+
+    $scope.Logout = function() {
+        SaveUser(null)
+        Redirect("Login.html")
     }
 
     function GetMeetings() {
