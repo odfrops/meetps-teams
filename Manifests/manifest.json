@@ -15,11 +15,11 @@
     "outline": "outline.png"
   },
   "name": {
-    "short": "MeetingPulse for Teams",
-    "full": ""
+    "short": "MeetingPulse",
+    "full": "MeetingPulse for Teams"
   },
   "description": {
-    "short": "Engage your participants in Microsoft Teams meetings by adding live QA and so on",
+    "short": "Enhance Teams meetings with Q&A, polling, surveys, quizzes, and interactions.",
     "full": "MeetingPulse provides a flexible suite of interactivity tools that make meetings in Microsoft Teams more engaging and valuable. As we continue to work, learn, and attend events remotely, active participation in online meetings has become more important than ever. When meeting sizes grow beyond 10 people, tools are needed to efficiently gain insights from participants. Better meetings drive increased employee satisfaction, improved customer experiences, and more effective learning.\nMeetingPulse allows you to enable real-time interactions like:\n- Animated reaction emojis\n- Q&A (with or without moderation)\n- Pre-, post-, and in- meeting surveys\n- Live agendas and brainstorms\n- Polls and voting\n- Quizzes, games, and raffles\n\nTypes of meetings where MeetingPulse is used often:\n- Meetings with 10+ participants\n- Company Town Hall\n- All-hands\n- Annual General Meetings\n- Board meetings\n- Product/sales kick-off\n- Human Resources & benefits enrollment\n- Corporate announcements"
   },
   "accentColor": "#FFFFFF",
