@@ -7,8 +7,8 @@
   "developer": {
     "name": "MeetingPulse",
     "websiteUrl": "https://meet.ps",
-    "privacyUrl": "https://inmomentsoftware.github.io/mp_msteams/Home/Privacy.html",
-    "termsOfUseUrl": "https://inmomentsoftware.github.io/mp_msteams/Home/TermsOfUse.html"
+    "privacyUrl": "https://meet.ps/privacy-policy/",
+    "termsOfUseUrl": "https://meet.ps/terms-of-service/"
   },
   "icons": {
     "color": "color.png",
