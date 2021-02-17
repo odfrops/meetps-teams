@@ -15,7 +15,7 @@
     "outline": "outline.png"
   },
   "name": {
-    "short": "MeetingPulse",
+    "short": "MeetingPulse for Teams",
     "full": "MeetingPulse for Teams"
   },
   "description": {
@@ -38,10 +38,6 @@
   ],
   "permissions": ["identity", "messageTeamMembers"],
   "validDomains": [
-    "odfrops.github.io",
-    "inmomentsoftware.github.io",
-    "dev.meet.ps",
-    "app.meet.ps",
-    "local.meet.ps:8443"
+    "app.meet.ps"
   ]
 }
