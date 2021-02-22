@@ -30,7 +30,7 @@ div {
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
-    line-height: 23px;
+    height: 33px;
     margin: 10px;
     border-radius: 5px;
 }
@@ -61,7 +61,7 @@ div {
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
-    line-height: 23px;
+    height: 53px;
 }
 .title div span,
 .title div svg {
