@@ -72,7 +72,7 @@ function ForgotPassword () {
 }
 
 function GetAttendeeURL (meetingid) {
-    return BaseURL + '/presenter/' + meetingid
+    return BaseURL + 'presenter/' + meetingid
 }
 
 function getQueryStringValue(key) {
