@@ -71,9 +71,13 @@ function ForgotPassword () {
     window.open(BaseURL + "login/forgot", "_blank")
 }
 
+// function GetAttendeeURL (meetingid) {
+//     return BaseURL + '' + meetingid
+// }
+
 function GetAttendeeURL (meetingid) {
-    return BaseURL + '' + meetingid
-    // return BaseURL + 'presenter/' + meetingid
+    var User = getCurrentUser()
+    return BaseURL + 'presenter/' + meetingid + '&t=' + User.ClientToken
 }
 
 function getQueryStringValue(key) {
