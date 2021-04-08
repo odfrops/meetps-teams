@@ -72,13 +72,9 @@ function ForgotPassword () {
 }
 
 function GetAttendeeURL (meetingid) {
-    return BaseURL + '' + meetingid
+    var User = getCurrentUser()
+    return BaseURL + 'presenter/' + meetingid + '?t=' + User.ClientToken
 }
-
-// function GetAttendeeURL (meetingid) {
-//     var User = getCurrentUser()
-//     return BaseURL + 'presenter/' + meetingid + '?t=' + User.ClientToken
-// }
 
 function getQueryStringValue(key) {
     return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"))
