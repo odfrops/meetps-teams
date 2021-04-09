@@ -1,8 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.8/MicrosoftTeams.schema.json",
   "manifestVersion": "1.8",
-  "version": "1.0.25",
-  "id": "9720c6de-a181-4f1d-969b-7640cc969eda",
+  "version": "1.0.26",
+  "id": "9720c6de-a181-4f1d-969b-7640cc969edb",
   "packageName": "com.microsoft.teams.extension",
   "developer": {
     "name": "MeetingPulse",
@@ -15,8 +15,8 @@
     "outline": "outline.png"
   },
   "name": {
-    "short": "MeetingPulse Audience Tools",
-    "full": "MeetingPulse Audience Tools"
+    "short": "MeetingPulse - Dev",
+    "full": "MeetingPulse Audience Tools - Dev"
   },
   "description": {
     "short": "Enhance video meetings with Q&A, polling, surveys, quizzes, and interactions.",
@@ -25,7 +25,7 @@
   "accentColor": "#FFFFFF",
   "configurableTabs": [
     {
-      "configurationUrl": "https://odfrops.github.io/ppt_addin/Home/TabConfigure.html",
+      "configurationUrl": "https://odfrops.github.io/meetps-teams/Home/TabConfigure.html",
       "canUpdateConfiguration": true,
       "scopes": ["groupchat"],
       "context": [
