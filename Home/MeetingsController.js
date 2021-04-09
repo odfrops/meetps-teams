@@ -5,7 +5,7 @@
         GetMeetings()
     })
 
-    microsoftTeams.initialize();
+    microsoftTeams.initialize()
 
     microsoftTeams.getContext(function (context) {
         if (context && context.theme) {
@@ -29,7 +29,7 @@
             suggestedDisplayName: meetId + ' - Dev', // TODO: REMOVE in production
         })
         saveEvent.notifySuccess()
-    });
+    })
 
     $scope.Meetings = []
     $scope.selected = ''
