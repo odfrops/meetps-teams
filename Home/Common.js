@@ -66,7 +66,6 @@ function GetRedirectURL(q) {
     return prefix + q
 }
 
-// TODO: ng-click this
 function ForgotPassword () {
     window.open(BaseURL + "login/forgot", "_blank")
 }

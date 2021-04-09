@@ -26,7 +26,7 @@
         microsoftTeams.settings.setSettings({
             contentUrl: url,
             entityId: url,
-            suggestedDisplayName: meetId,
+            suggestedDisplayName: meetId + 'dev', // TODO: REMOVE in production
         })
         saveEvent.notifySuccess()
     });
