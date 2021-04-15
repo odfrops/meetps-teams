@@ -72,7 +72,8 @@ function ForgotPassword () {
 
 function GetAttendeeURL (meetingid) {
     var User = getCurrentUser()
-    return BaseURL + 'presenter/' + meetingid + '?t=' + User.ClientToken
+    // return BaseURL + 'presenter/' + meetingid + '?t=' + User.ClientToken
+    return BaseURL + meetingid
 }
 
 function getQueryStringValue(key) {
