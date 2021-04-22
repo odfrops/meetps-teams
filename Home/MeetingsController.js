@@ -23,7 +23,7 @@
         ])
         microsoftTeams.settings.setSettings({
             contentUrl: url,
-            entityId: url,
+            entityId: meetId,
             suggestedDisplayName: meetId
         })
         saveEvent.notifySuccess()
