@@ -1,9 +1,8 @@
 var myCtrl = ['$scope', 'AngularServices', function ($scope, AngularServices) {
 
-    $scope.frameContext = ''
+    $scope.frameContext = '' // sidePanel, content
     $scope.loginHint = ''
-    $scope.creator = ''
-    $scope.url = location.href
+    $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
 
     microsoftTeams.initialize()
 
@@ -15,11 +14,16 @@ var myCtrl = ['$scope', 'AngularServices', function ($scope, AngularServices) {
             if (context.loginHint) {
                 $scope.loginHint = context.loginHint
             }
-            if (context.creator) {
-                $scope.creator = context.creator
-            }
         }
+
+        Init()
     })
+
+    function Init() {
+        console.log($scope.frameContext)
+        console.log($scope.loginHint)
+        console.log($scope.creator)
+    }
 }]
 
 app.controller("myCtrl", myCtrl)

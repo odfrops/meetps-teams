@@ -17,8 +17,6 @@
     microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
         // var url = GetAttendeeURL(meetId) // TODO: do something
         var url = GetContentURL('Content.html', [
-            { key: 'frameContext', value: '{frameContext}' },
-            { key: 'loginHint', value: '{loginHint}' },
             { key: 'creator', value: teamsContext['loginHint']}
         ])
         microsoftTeams.settings.setSettings({
