@@ -3,6 +3,8 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     $scope.frameContext = ''
     $scope.loginHint = ''
     $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
+    $scope.url = ''
+
     var meeting_id = getQueryStringValue('meet')
 
     microsoftTeams.initialize()
@@ -39,10 +41,12 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
     function DisplayAttendee() {
         $scope.url = $sce.trustAsResourceUrl(GetAttendeeURL(meeting_id));
+        console.log($scope.url);
     }
 
     function DisplayPresenter() {
         $scope.url = $sce.trustAsResourceUrl(GetPresenterURL(meeting_id));
+        console.log($scope.url);
     }
 
     $scope.GotoLogoutPage = function () {
