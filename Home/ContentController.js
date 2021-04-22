@@ -3,7 +3,7 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     $scope.frameContext = ''
     $scope.loginHint = ''
     $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
-    var meeting_id = getQueryStringValue(meet)
+    var meeting_id = getQueryStringValue('meet')
 
     microsoftTeams.initialize()
 
