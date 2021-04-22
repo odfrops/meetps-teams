@@ -78,7 +78,7 @@ function GetAttendeeURL (meetingid) {
 
 function GetContentURL (file, params) {
     var url = GetRedirectURL(file)
-    var paramString = params.forEach(function (param) {
+    var paramString = params.map(function (param) {
         return param.key + '=' + param.value
     }).join('&')
     if (paramString.length > 0) {
