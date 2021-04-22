@@ -1,26 +1,36 @@
 var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
-    $scope.frameContext = ''
-    $scope.loginHint = ''
-    $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
-    $scope.url = ''
+    $scope.frameContext = 'content'
+    $scope.loginHint = 'orikon@meetingpulse.net'
+    $scope.creator = 'orikon@meetingpulse.net'
+    $scope.iframe = {}
 
-    var meeting_id = getQueryStringValue('meet')
+    var meeting_id = 'or-meeting'
+    // $scope.frameContext = ''
+    // $scope.loginHint = ''
+    // $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
+    // $scope.url = ''
 
-    microsoftTeams.initialize()
+    // var meeting_id = getQueryStringValue('meet')
 
-    microsoftTeams.getContext(function (context) {
-        if (context) {
-            if (context.frameContext) {
-                $scope.frameContext = context.frameContext
-            }
-            if (context.loginHint) {
-                $scope.user = context.loginHint
-            }
-        }
+    // microsoftTeams.initialize()
 
+    // microsoftTeams.getContext(function (context) {
+    //     if (context) {
+    //         if (context.frameContext) {
+    //             $scope.frameContext = context.frameContext
+    //         }
+    //         if (context.loginHint) {
+    //             $scope.user = context.loginHint
+    //         }
+    //     }
+
+    //     Init()
+    // })
+
+    setTimeout(function () {
         Init()
-    })
+    }, 100);
 
     function Init() {
         if ($scope.frameContext === 'sidePanel') {
@@ -40,15 +50,15 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     }
 
     function DisplayAttendee() {
-        $scope.url = $sce.trustAsResourceUrl(GetAttendeeURL(meeting_id));
+        $scope.iframe.url = GetAttendeeURL(meeting_id); // $sce.trustAsResourceUrl(GetAttendeeURL(meeting_id));
         console.log(GetAttendeeURL(meeting_id));
-        console.log($scope.url);
+        console.log($scope.iframe.url);
     }
 
     function DisplayPresenter() {
-        $scope.url = $sce.trustAsResourceUrl(GetPresenterURL(meeting_id));
+        $scope.iframe.url = GetPresenterURL(meeting_id); //$sce.trustAsResourceUrl(GetPresenterURL(meeting_id));
         console.log(GetPresenterURL(meeting_id));
-        console.log($scope.url);
+        console.log($scope.iframe.url);
     }
 
     $scope.GotoLogoutPage = function () {
