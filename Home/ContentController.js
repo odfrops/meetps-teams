@@ -5,21 +5,20 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
     var meeting_id = getQueryStringValue(meet)
 
-    Init()
-    // microsoftTeams.initialize()
+    microsoftTeams.initialize()
 
-    // microsoftTeams.getContext(function (context) {
-    //     if (context) {
-    //         if (context.frameContext) {
-    //             $scope.frameContext = context.frameContext
-    //         }
-    //         if (context.loginHint) {
-    //             $scope.user = context.loginHint
-    //         }
-    //     }
+    microsoftTeams.getContext(function (context) {
+        if (context) {
+            if (context.frameContext) {
+                $scope.frameContext = context.frameContext
+            }
+            if (context.loginHint) {
+                $scope.user = context.loginHint
+            }
+        }
 
-    //     Init()
-    // })
+        Init()
+    })
 
     function Init() {
         if ($scope.frameContext === 'sidePanel') {
