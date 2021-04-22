@@ -76,6 +76,17 @@ function GetAttendeeURL (meetingid) {
     return BaseURL + meetingid
 }
 
+function GetContentURL (file, params) {
+    var url = GetRedirectURL(file)
+    var paramString = params.forEach(function (param) {
+        return param.key + '=' + param.value
+    }).join('&')
+    if (paramString.length > 0) {
+        url = url + '?' + paramString
+    }
+    return url
+}
+
 function getQueryStringValue(key) {
     return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"))
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title></title>
+
+    <!-- <script src="https://unpkg.com/@microsoft/teams-js/dist/MicrosoftTeams.min.js" crossorigin="anonymous" type="text/javascript"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" type="text/javascript"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js" type="text/javascript"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script> -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script> -->
+
+    <script src="Common.js" type="text/javascript"></script>
+    <script src="ContentController.js" type="text/javascript"></script>
+
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <link href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css" rel="stylesheet" type="text/css" /> -->
+    <link href="Common.css" rel="stylesheet" type="text/css" />
+    <link href="Content.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div class="content" id="logout">
+        <div class="header">
+            <div class="spacing"></div>
+            <div class="button">Log out</div>
+        </div>
+        <div class="iframe">
+            <div>{{frameContext}}</div>
+            <div>{{loginHint}}</div>
+            <div>{{creator}}</div>
+            <div>{{url}}</div>
+        </div>
+    </div>
+    <div class="content" id="attendee" style="background-color: blue;">
+    </div>
+    <div class="content" id="presenter" style="background-color: yellow;">
+    </div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 ﻿var myCtrl = ['$scope', 'AngularServices', function ($scope, AngularServices) {
 
     var meetId = ''
+    var teamsContext = {}
     angular.element(document).ready(function () {
         GetMeetings()
     })
@@ -8,25 +9,22 @@
     microsoftTeams.initialize()
 
     microsoftTeams.getContext(function (context) {
-        if (context && context.theme) {
-            setTheme(context.theme)
+        if (context) {
+            teamsContext = context
         }
     })
 
-    microsoftTeams.registerOnThemeChangeHandler(function (theme) {
-        setTheme(theme)
-    })
-
-    function setTheme(theme) {
-        console.log(theme)
-    }
-
     microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
-        var url = GetAttendeeURL(meetId)
+        // var url = GetAttendeeURL(meetId) // TODO: do something
+        var url = GetContentURL('Content.html', [
+            { key: 'frameContext', value: '{frameContext}' },
+            { key: 'loginHint', value: '{loginHint}' },
+            { key: 'creator', value: teamsContext['loginHint']}
+        ])
         microsoftTeams.settings.setSettings({
             contentUrl: url,
             entityId: url,
-            suggestedDisplayName: meetId + ' - Dev', // TODO: REMOVE in production
+            suggestedDisplayName: meetId
         })
         saveEvent.notifySuccess()
     })
