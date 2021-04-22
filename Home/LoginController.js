@@ -4,7 +4,6 @@
     $scope.Password = ""
 
     angular.element(document).ready(function () {
-        $(".pointcur").css('cursor', 'pointer')
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
     })
@@ -45,7 +44,12 @@
                             "Token": response.data.result.token,
                             "ClientToken": response.data.result.clientToken
                         })
-                        Redirect("Meetings.html")
+                        var redir = getQueryStringValue("redir")
+                        if (redir == "") {
+                            Redirect("Meetings.html")
+                        } else {
+                            Redirect(redir)
+                        }
                         break
                     default:
                         break
