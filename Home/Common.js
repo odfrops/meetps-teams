@@ -120,6 +120,10 @@ if (window.angular) {
         }
     }])
 
+    app.config(function($sceProvider) {
+        $sceProvider.enabled(false);
+    });
+
     app.service('AngularServices', ['$http', function ($http) {
         var API = {
             GET: function (EndPoint,headers) {
