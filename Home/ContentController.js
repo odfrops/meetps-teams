@@ -48,18 +48,15 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     }
 
     function DisplayAttendee() {
-        $scope.iframe.url = GetAttendeeURL(meeting_id); // $sce.trustAsResourceUrl(GetAttendeeURL(meeting_id));
-        console.log(GetAttendeeURL(meeting_id));
-        console.log($scope.iframe.url);
+        $scope.iframe.url = GetAttendeeURL(meeting_id);
     }
 
     function DisplayPresenter() {
-        $scope.iframe.url = GetPresenterURL(meeting_id); //$sce.trustAsResourceUrl(GetPresenterURL(meeting_id));
-        console.log(GetPresenterURL(meeting_id));
-        console.log($scope.iframe.url);
+        $scope.iframe.url = GetPresenterURL(meeting_id);
     }
 
     $scope.GotoLogoutPage = function () {
+        SaveUser(null)
         window.location.href = GetLogoutURL(window.location.href)
     }
 }]
