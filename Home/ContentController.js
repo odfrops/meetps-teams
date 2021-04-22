@@ -1,36 +1,34 @@
 var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
-    $scope.frameContext = 'content'
-    $scope.loginHint = 'orikon@meetingpulse.net'
-    $scope.creator = 'orikon@meetingpulse.net'
-    $scope.iframe = {}
-
-    var meeting_id = 'or-meeting'
-    // $scope.frameContext = ''
-    // $scope.loginHint = ''
-    // $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
-    // $scope.url = ''
-
-    // var meeting_id = getQueryStringValue('meet')
-
-    // microsoftTeams.initialize()
-
-    // microsoftTeams.getContext(function (context) {
-    //     if (context) {
-    //         if (context.frameContext) {
-    //             $scope.frameContext = context.frameContext
-    //         }
-    //         if (context.loginHint) {
-    //             $scope.user = context.loginHint
-    //         }
-    //     }
-
+    // $scope.frameContext = 'content'
+    // $scope.loginHint = 'orikon@meetingpulse.net'
+    // $scope.creator = 'orikon@meetingpulse.net'
+    // $scope.iframe = {}
+    // var meeting_id = 'or-meeting'
+    // setTimeout(function () {
     //     Init()
-    // })
+    // }, 100);
 
-    setTimeout(function () {
+    $scope.frameContext = ''
+    $scope.loginHint = ''
+    $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
+    $scope.url = ''
+    var meeting_id = getQueryStringValue('meet')
+
+    microsoftTeams.initialize()
+
+    microsoftTeams.getContext(function (context) {
+        if (context) {
+            if (context.frameContext) {
+                $scope.frameContext = context.frameContext
+            }
+            if (context.loginHint) {
+                $scope.user = context.loginHint
+            }
+        }
+
         Init()
-    }, 100);
+    })
 
     function Init() {
         if ($scope.frameContext === 'sidePanel') {
