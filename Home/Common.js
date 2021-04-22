@@ -71,9 +71,21 @@ function ForgotPassword () {
 }
 
 function GetAttendeeURL (meetingid) {
-    var User = getCurrentUser()
-    // return BaseURL + 'presenter/' + meetingid + '?t=' + User.ClientToken
     return BaseURL + meetingid
+}
+
+function GetPresenterURL (meetingid) {
+    var User = getCurrentUser()
+    return BaseURL + 'presenter/' + meetingid + '?t=' + User.ClientToken
+}
+
+function GetLogoutURL (redirect) {
+    var url = window.location.protocol + '//' + window.location.hostname + GetRedirectURL('Login.html')
+    if (url.search('?') >= 0) {
+        url = url + '&redirect=' + encodeURIComponent(redirect)
+    } else {
+        url = url + '?redirect=' + encodeURIComponent(redirect)
+    }
 }
 
 function GetContentURL (file, params) {

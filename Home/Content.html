@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title></title>
 
-    <script src="https://unpkg.com/@microsoft/teams-js/dist/MicrosoftTeams.min.js" crossorigin="anonymous" type="text/javascript"></script>
+    <!-- <script src="https://unpkg.com/@microsoft/teams-js/dist/MicrosoftTeams.min.js" crossorigin="anonymous" type="text/javascript"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js" type="text/javascript"></script>
@@ -26,21 +26,13 @@
 
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
-    <div class="content" id="logout">
+    <div class="content">
         <div class="header">
             <div class="spacing"></div>
-            <div class="button">Log out</div>
+            <div class="button" ng-click="GotoLogoutPage()">Log out</div>
         </div>
-        <div class="iframe">
-            <div>{{frameContext}}</div>
-            <div>{{loginHint}}</div>
-            <div>{{creator}}</div>
-            <div>{{url}}</div>
-        </div>
-    </div>
-    <div class="content" id="attendee" style="background-color: blue;">
-    </div>
-    <div class="content" id="presenter" style="background-color: yellow;">
+        <iframe class="iframe" ng-src="{{url}}">
+        </iframe>
     </div>
 </body>
 </html>

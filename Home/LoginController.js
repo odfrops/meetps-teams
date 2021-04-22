@@ -44,11 +44,11 @@
                             "Token": response.data.result.token,
                             "ClientToken": response.data.result.clientToken
                         })
-                        var redir = getQueryStringValue("redir")
+                        var redir = getQueryStringValue("redirect")
                         if (redir == "") {
                             Redirect("Meetings.html")
                         } else {
-                            Redirect(redir)
+                            window.location.href = decodeURIComponent(redir)
                         }
                         break
                     default:
