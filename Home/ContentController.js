@@ -41,11 +41,13 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
     function DisplayAttendee() {
         $scope.url = $sce.trustAsResourceUrl(GetAttendeeURL(meeting_id));
+        console.log(GetAttendeeURL(meeting_id));
         console.log($scope.url);
     }
 
     function DisplayPresenter() {
         $scope.url = $sce.trustAsResourceUrl(GetPresenterURL(meeting_id));
+        console.log(GetPresenterURL(meeting_id));
         console.log($scope.url);
     }
 
