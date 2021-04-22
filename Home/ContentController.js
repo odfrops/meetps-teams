@@ -14,6 +14,7 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
     $scope.iframe = {}
     var meeting_id = getQueryStringValue('meet')
+    $scope.iframe.url = GetAttendeeURL(meeting_id);
 
     microsoftTeams.initialize()
 
