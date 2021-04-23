@@ -5,7 +5,7 @@ var configs = {
         "domain": "dev.meet.ps"
     },
     "default": {
-        "domain": "app.meet.ps"
+        "domain": "dev.meet.ps"  // TODO: change into `app.meet.ps`
     },
     "local": {
         "domain": "local.meet.ps:8443"
