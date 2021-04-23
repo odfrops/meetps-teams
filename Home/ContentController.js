@@ -38,18 +38,38 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     }
 
     function DisplayAttendee() {
-        $('#iframe').attr('src', GetAttendeeURL(meeting_id));
-        $('.header').hide();
-        $('.content').show();
+        $('#iframe').attr('src', GetAttendeeURL(meeting_id))
+        $('.header').hide()
+        $('.content').show()
+        StartMonitor()
     }
 
     function DisplayPresenter() {
-        $('#iframe').attr('src', GetPresenterURL(meeting_id));
-        $('.header').show();
-        $('.content').show();
+        $('#iframe').attr('src', GetPresenterURL(meeting_id))
+        $('.header').show()
+        $('.content').show()
+        StartMonitor()
+    }
+
+    var monitor = null
+
+    function StartMonitor() {
+        monitor = setInterval(function () {
+            var User = getCurrentUser()
+            if (!(User && 'ClientToken' in User)) {
+                $scope.GotoLogoutPage()
+            }
+        }, 1000)
+    }
+
+    function StopMonitor() {
+        clearInterval(monitor)
     }
 
     $scope.GotoLogoutPage = function () {
+        if (monitor !== null) {
+            StopMonitor()
+        }
         SaveUser(null)
         window.location.href = GetLogoutURL(window.location.href)
     }
