@@ -1,13 +1,5 @@
 var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
-    // $scope.frameContext = 'content'
-    // $scope.user = 'orikon@meetingpulse.net'
-    // $scope.creator = 'orikon@meetingpulse.net'
-    // var meeting_id = 'or-meeting'
-    // setTimeout(function () {
-    //     Init()
-    // }, 100);
-
     $scope.frameContext = ''
     $scope.user = ''
     $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
