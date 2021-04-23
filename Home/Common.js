@@ -104,7 +104,7 @@ function getQueryStringValue(key) {
 
 if (window.angular) {
     var app
-    if (window.location.href.endsWith('Login.html')) {
+    if (window.location.href.search('Login.html') >= 0) {
         app = angular.module('myApp', ['ngSanitize', 'ngMaterial', 'ngMessages'])
     } else {
         app = angular.module('myApp', ['ngSanitize'])
