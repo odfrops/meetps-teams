@@ -58,7 +58,6 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     $scope.GotoLogoutPage = function () {
         SaveUser(null)
         window.location.href = GetLogoutURL(window.location.href)
-        $('.content').show();
     }
 }]
 
