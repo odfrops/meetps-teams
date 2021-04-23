@@ -1,7 +1,7 @@
 var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
     // $scope.frameContext = 'content'
-    // $scope.loginHint = 'orikon@meetingpulse.net'
+    // $scope.user = 'orikon@meetingpulse.net'
     // $scope.creator = 'orikon@meetingpulse.net'
     // var meeting_id = 'or-meeting'
     // setTimeout(function () {
@@ -9,7 +9,7 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     // }, 100);
 
     $scope.frameContext = ''
-    $scope.loginHint = ''
+    $scope.user = ''
     $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
     var meeting_id = getQueryStringValue('meet')
 
@@ -47,11 +47,13 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
     function DisplayAttendee() {
         $('#iframe').attr('src', GetAttendeeURL(meeting_id));
+        $('.header').hide();
         $('.content').show();
     }
 
     function DisplayPresenter() {
         $('#iframe').attr('src', GetPresenterURL(meeting_id));
+        $('.header').show();
         $('.content').show();
     }
 
