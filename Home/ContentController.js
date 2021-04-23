@@ -3,7 +3,6 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     // $scope.frameContext = 'content'
     // $scope.loginHint = 'orikon@meetingpulse.net'
     // $scope.creator = 'orikon@meetingpulse.net'
-    // $scope.iframe = {}
     // var meeting_id = 'or-meeting'
     // setTimeout(function () {
     //     Init()
@@ -12,9 +11,7 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     $scope.frameContext = ''
     $scope.loginHint = ''
     $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
-    $scope.iframe = {}
     var meeting_id = getQueryStringValue('meet')
-    $scope.iframe.url = GetAttendeeURL(meeting_id);
 
     microsoftTeams.initialize()
 
@@ -49,12 +46,12 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     }
 
     function DisplayAttendee() {
-        $scope.iframe.url = GetAttendeeURL(meeting_id);
+        $('#iframe').attr('src', GetAttendeeURL(meeting_id));
         $('.content').show();
     }
 
     function DisplayPresenter() {
-        $scope.iframe.url = GetPresenterURL(meeting_id);
+        $('#iframe').attr('src', GetPresenterURL(meeting_id));
         $('.content').show();
     }
 
