@@ -5,15 +5,15 @@ var configs = {
         "domain": "dev.meet.ps"
     },
     "default": {
-        "domain": "dev.meet.ps"  // TODO: change into `app.meet.ps`
+        "domain": "app.meet.ps"
     },
     "local": {
         "domain": "local.meet.ps:8443"
     }
 }
 
-var mode = 'default'
-var config = configs[mode] || configs.default
+var mode = 'development' // change into 'default'
+var config = configs[mode]
 
 var BaseURL = "https://" + config.domain + "/"
 var BaseAPIURI = BaseURL + "api/"
