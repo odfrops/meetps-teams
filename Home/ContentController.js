@@ -59,7 +59,7 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
             if (!(User && 'ClientToken' in User)) {
                 $scope.GotoLogoutPage()
             }
-        }, 1000)
+        }, 5000)
     }
 
     function StopMonitor() {
