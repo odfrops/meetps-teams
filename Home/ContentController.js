@@ -82,9 +82,9 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
         if (monitor !== null) {
             StopMonitor()
         }
-        console.log(GetLogoutURL(window.location.href))
-        // SaveUser(null)
-        // window.location.href = GetLogoutURL(window.location.href)
+        // console.log(GetLogoutURL(window.location.href))
+        SaveUser(null)
+        window.location.href = GetLogoutURL(window.location.href)
     }
 }]
 
