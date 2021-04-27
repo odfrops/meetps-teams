@@ -21,19 +21,32 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     })
 
     function Init() {
-        if ($scope.frameContext === 'sidePanel') {
+        var mode = GetMode()
+        if (mode === 'Attendee') {
             DisplayAttendee()
+        } else if (mode === 'Presenter') {
+            DisplayPresenter()
+        } else { // Logout
+            $scope.GotoLogoutPage()
+        }
+    }
+
+    function GetMode() {
+        if ($scope.frameContext === 'sidePanel') {
+            return 'Attendee'
         } else if ($scope.frameContext === 'content') {
             var User = getCurrentUser()
             if (User && 'ClientToken' in User) {
-                DisplayPresenter()
+                return 'Presenter'
             } else {
                 if ($scope.user == $scope.creator) {
-                    $scope.GotoLogoutPage()
+                    return 'Logout'
                 } else {
-                    DisplayAttendee()
+                    return 'Attendee'
                 }
             }
+        } else { // no case
+            return 'Logout'
         }
     }
 
@@ -55,8 +68,7 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
     function StartMonitor() {
         monitor = setInterval(function () {
-            var User = getCurrentUser()
-            if (!(User && 'ClientToken' in User)) {
+            if (GetMode() === 'Logout') {
                 $scope.GotoLogoutPage()
             }
         }, 5000)
