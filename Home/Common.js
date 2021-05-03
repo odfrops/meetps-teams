@@ -12,7 +12,7 @@ var configs = {
     }
 }
 
-var mode = 'development' // change into 'default'
+var mode = location.href.search('odfrops.github.io') >= 0 ? 'development' : 'default'
 var config = configs[mode]
 
 var BaseURL = "https://" + config.domain + "/"
