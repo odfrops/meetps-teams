@@ -76,7 +76,7 @@ function GetAttendeeURL (meetingid) {
 
 function GetPresenterURL (meetingid) {
     var User = getCurrentUser()
-    return BaseURL + 'presenter/' + meetingid + '?t=' + User.ClientToken
+    return BaseURL + 'presenter/' + meetingid + '?t=' + User.ClientToken + '&hmm=1'
 }
 
 function GetLogoutURL (redirect) {
