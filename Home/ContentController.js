@@ -32,6 +32,24 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     }
 
     function GetMode() {
+        var User = getCurrentUser()
+        if (User && 'ClientToken' in User) {
+            if ($scope.frameContext === 'sidePanel') {
+                return 'Attendee'
+            } else {
+                if ($scope.user == $scope.creator) {
+                    return 'Attendee'
+                    // return 'Presenter'
+                } else {
+                    return 'Attendee'
+                }
+            }
+        } else {
+            return 'Logout'
+        }
+    }
+
+    function GetModeOrigin() {
         if ($scope.frameContext === 'sidePanel') {
             return 'Attendee'
         } else if ($scope.frameContext === 'content') {
