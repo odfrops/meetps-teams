@@ -22,8 +22,10 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
     function Init() {
         var mode = GetMode()
-        if (mode === 'Attendee') {
-            DisplayAttendee()
+        if (mode === 'AttendeeHide') {
+            DisplayAttendee(true)
+        } else if (mode === 'Attendee') {
+            DisplayAttendee(false)
         } else if (mode === 'Presenter') {
             DisplayPresenter()
         } else { // Logout
@@ -35,7 +37,7 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
         var User = getCurrentUser()
         if (User && 'ClientToken' in User) {
             if ($scope.frameContext === 'sidePanel') {
-                return 'Attendee'
+                return 'AttendeeHide'
             } else {
                 if ($scope.user == $scope.creator) {
                     return 'Attendee'
@@ -68,10 +70,13 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
         }
     }
 
-    function DisplayAttendee() {
+    function DisplayAttendee(hide = true) {
         $('#iframe').attr('src', GetAttendeeURL(meeting_id))
-        // $('.header').hide()
-        $('.header').show()
+        if (hide) {
+            $('.header').hide()
+        } else {
+            $('.header').show()
+        }
         $('.content').show()
         StartMonitor()
     }
