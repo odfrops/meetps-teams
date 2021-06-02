@@ -70,7 +70,8 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
     function DisplayAttendee() {
         $('#iframe').attr('src', GetAttendeeURL(meeting_id))
-        $('.header').hide()
+        // $('.header').hide()
+        $('.header').show()
         $('.content').show()
         StartMonitor()
     }
