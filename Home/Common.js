@@ -20,6 +20,7 @@ var BaseAPIURI = BaseURL + "api/"
 
 var basePath = "/Home"
 
+var sharedKey = mode === 'development' ? '5c52227885a592b2946467d90f4e8a2f9eee' : 'da3bfe2b41a29ac8d3d32eb0aa10b9d91cf7'
 
 // Reprototypings.
 
@@ -70,8 +71,26 @@ function ForgotPassword () {
     window.open(BaseURL + "login/forgot", "_blank")
 }
 
-function GetAttendeeURL (meetingid) {
-    return BaseURL + meetingid + '?hmm=true'
+function generateAttendeePayload(id, name, email) {
+    var bodyString = sharedKey + id + name + email
+    var body = {
+        "client": "msteams",
+        "id": id,
+        "name": name,
+        "email": email,
+        "signature": sha256(bodyString)
+    }
+    console.log(bodyString)
+    console.log(body.signature)
+    return btoa(JSON.stringify(body))
+}
+
+function GetAttendeeURL (meetingid, id, name, email) {
+    var retURL = BaseURL + meetingid + '?hmm=true'
+    if (id !== undefined && name !== undefined && email !== undefined) {
+        retURL = retURL + '&i=' + generateAttendeePayload()
+    }
+    return retURL
 }
 
 function GetPresenterURL (meetingid) {

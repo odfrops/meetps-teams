@@ -71,7 +71,8 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
     }
 
     function DisplayAttendee(hide = true) {
-        $('#iframe').attr('src', GetAttendeeURL(meeting_id))
+        var attURL = GetAttendeeURL(meeting_id, $scope.user, $scope.user, $scope.user)
+        $('#iframe').attr('src', attURL)
         if (hide) {
             $('.header').hide()
         } else {
