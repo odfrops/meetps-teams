@@ -88,7 +88,7 @@ function generateAttendeePayload(id, name, email) {
 function GetAttendeeURL (meetingid, id, name, email) {
     var retURL = BaseURL + meetingid + '?hmm=true'
     if (id !== undefined && name !== undefined && email !== undefined) {
-        retURL = retURL + '&i=' + generateAttendeePayload()
+        retURL = retURL + '&i=' + generateAttendeePayload(id, name, email)
     }
     return retURL
 }
