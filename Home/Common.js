@@ -55,7 +55,6 @@ function Redirect(q) {
 }
 
 function GetRedirectURL(q) {
-    console.log(q)
     // Honour base relative path.
     var currentPath = window.location.pathname.indexOf(basePath)
     var basePrefix = window.location.pathname.substring(0, currentPath)
@@ -80,8 +79,6 @@ function generateAttendeePayload(id, name, email) {
         "email": email,
         "signature": sha256(bodyString)
     }
-    console.log(bodyString)
-    console.log(body.signature)
     return encodeURIComponent(btoa(JSON.stringify(body)));
 }
 
