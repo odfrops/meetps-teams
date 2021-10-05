@@ -20,7 +20,7 @@ var BaseAPIURI = BaseURL + "api/"
 
 var basePath = "/Home"
 
-var sharedKey = (mode !== 'development' ? '5c52227885a592b2946467d90f4e8a2f9eee' : 'da3bfe2b41a29ac8d3d32eb0aa10b9d91cf7')
+var sharedKey = (mode === 'development' ? 'da3bfe2b41a29ac8d3d32eb0aa10b9d91cf7' : 'da3bfe2b41a29ac8d3d32eb0aa10b9d91cf7')
 
 // Reprototypings.
 
