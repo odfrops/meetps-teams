@@ -40,8 +40,8 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
                 return 'AttendeeHide'
             } else {
                 if ($scope.user == $scope.creator) {
-                    return 'Attendee'
-                    // return 'Presenter'
+                    // return 'Attendee'
+                    return 'Presenter'
                 } else {
                     return 'Attendee'
                 }
