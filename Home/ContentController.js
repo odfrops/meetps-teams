@@ -1,4 +1,4 @@
-var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
+var myCtrl = ['$scope', 'AngularServices', function ($scope, AngularServices) {
 
     ValidateToken()
 
@@ -31,14 +31,14 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
             "Authorization": "Bearer " + User.Token
         }
 
-        $sce.GET("meetings", headers).
+        AngularServices.GET("meetings", headers).
             then(function (response) {
                 switch (response.status) {
                     case 200:
                         OpenMeeting()
                         break
                     case 401:
-                        $sce.RenewTokenOrLogout(OpenMeeting)
+                        AngularServices.RenewTokenOrLogout(OpenMeeting)
                         break
                     default:
                         // Redirect("Login.html")
