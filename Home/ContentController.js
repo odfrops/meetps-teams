@@ -1,5 +1,7 @@
 var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
+    ValidateToken()
+
     $scope.frameContext = ''
     $scope.user = ''
     $scope.creator = decodeURIComponent(getQueryStringValue('creator'))
@@ -7,18 +9,43 @@ var myCtrl = ['$scope', '$sce', function ($scope, $sce) {
 
     microsoftTeams.initialize()
 
-    microsoftTeams.getContext(function (context) {
-        if (context) {
-            if (context.frameContext) {
-                $scope.frameContext = context.frameContext
+    function OpenMeeting() {
+        microsoftTeams.getContext(function (context) {
+            if (context) {
+                if (context.frameContext) {
+                    $scope.frameContext = context.frameContext
+                }
+                if (context.loginHint) {
+                    $scope.user = context.loginHint
+                }
             }
-            if (context.loginHint) {
-                $scope.user = context.loginHint
-            }
+            Init()
+        })
+    }
+
+    function ValidateToken() {
+        var User = getCurrentUser()
+        var headers = {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Bearer " + User.Token
         }
 
-        Init()
-    })
+        AngularServices.GET("meetings", headers).
+            then(function (response) {
+                switch (response.status) {
+                    case 200:
+                        OpenMeeting()
+                        break
+                    case 401:
+                        AngularServices.RenewTokenOrLogout(OpenMeeting)
+                        break
+                    default:
+                        // Redirect("Login.html")
+                        break
+                }
+            })
+    }
 
     function Init() {
         var mode = GetMode()
